@@ -33,26 +33,29 @@ module.exports = {
     }
   },
 
-  // Sheet configuration
+  // Sheet configuration - MATCHES YOUR ACTUAL SHEET
   sheet: {
     spreadsheetId: process.env.GOOGLE_SHEET_ID,
-    sheetName: 'Organized PRE-LAW',
+    sheetName: 'Sheet1', // Your default sheet
     headers: [
-      'Opportunity Name',
+      'Name of Opportunity',
+      'Demographic',
+      'What type of opportunity is it?',
+      'Notes',
+      'Date of submission',
+      'When is it?',
       'Organization',
-      'Type',
-      'Deadline Date',
       'Application Link',
-      'Brief Description',
       'Status'
     ]
   },
 
-  // Gmail configuration
+  // Gmail configuration - Runs every Friday morning
   gmail: {
     searchQuery: 'newer_than:7d (pre-law OR fellowship OR scholarship OR internship OR "first-gen" OR "Pacific Islander" OR underrepresented OR LSAT OR "pipeline program" OR "application deadline")',
     processLabel: 'Processed-by-Claude',
-    archiveAfterProcessing: false
+    archiveAfterProcessing: false,
+    schedule: 'Friday 8:00 AM' // When automation runs
   },
 
   // Calendar configuration
